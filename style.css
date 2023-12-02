@@ -1,0 +1,80 @@
+body {
+    background-color: black;
+}
+
+.time-combo-box {
+    color: hotpink;
+    width: 58px;
+    background-color: black;
+}
+
+.time-combo-box::-webkit-scrollbar {
+    width: 12px;
+    /* Setze die Breite der Bildlaufleiste */
+}
+
+.time-combo-box::-webkit-scrollbar-thumb {
+    background-color: hotpink;
+    /* Setze die Farbe des Bildlaufleisten-Griffs */
+}
+
+.time-combo-box::-webkit-scrollbar-track {
+    background-color: black;
+    /* Setze die Farbe der Bildlaufleisten-Spur */
+}
+
+.clock {
+    color: hotpink;
+    font-size: 48px;
+    text-align: center;
+    margin-top: 100px;
+    /* Setze den oberen Rand des Uhr-Elements auf 100px */
+}
+
+/* Tooltip container */
+.time-presets {
+    position: absolute;
+    display: inline-block;
+    transform: translateX(-50%);
+    left: 50%;
+    margin-top: 30px;
+}
+
+
+/* Tooltip text */
+.time-presets .tooltiptext {
+    width: 120px;
+    color: hotpink;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip text */
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+    /* Use half of the width (120/2 = 60), to center the tooltip */
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+/* Tooltip arrow */
+.time-presets .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: dotted;
+    border-color: hotpink transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.time-presets:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
