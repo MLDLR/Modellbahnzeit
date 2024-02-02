@@ -2,11 +2,28 @@ body {
     background-color: black;
 }
 
-.time-combo-box {
+/* Gemeinsame Klasse für beide Combo-Boxen */
+.combo-box {
     color: hotpink;
-    width: 58px;
     background-color: black;
+    border-radius: 10px;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
 }
+
+/* Individuelle Eigenschaften für die Time-Combo-Box */
+.time-combo-box {
+    width: 58px;
+    margin-top: 30px;
+}
+
+/* Individuelle Eigenschaften für die Speed-Combo-Box */
+.speed-combo-box {
+    width: 64px;
+    margin-top: 60px;
+}
+
 
 .time-combo-box::-webkit-scrollbar {
     width: 12px;
@@ -25,9 +42,9 @@ body {
 
 .clock {
     color: hotpink;
-    font-size: 48px;
+    font-size: 100px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
     /* Setze den oberen Rand des Uhr-Elements auf 100px */
 }
 
@@ -37,28 +54,44 @@ body {
     display: inline-block;
     transform: translateX(-50%);
     left: 50%;
-    margin-top: 30px;
 }
 
+/* Hier die Klasse .speed-presets hinzufügen */
+.speed-presets {
+    position: absolute;
+    display: inline-block;
+    transform: translateX(-50%);
+    left: 50%;
+}
 
 /* Tooltip text */
 .time-presets .tooltiptext {
     width: 120px;
     color: hotpink;
     text-align: center;
-    border-radius: 6px;
     padding: 5px 0;
-
-    /* Position the tooltip text */
     position: absolute;
-    bottom: 150%;
+    bottom: 100%; /* Ändern Sie die Positionierung von 'bottom' auf '100%' */
     left: 50%;
     margin-left: -60px;
-    /* Use half of the width (120/2 = 60), to center the tooltip */
-
-    /* Fade in tooltip */
+    margin-bottom: 10px; /* Fügen Sie einen negativen Abstand nach oben hinzu */
     opacity: 0;
     transition: opacity 2s;
+}
+
+.speed-presets .tooltiptext {
+width: 120px; 
+color: hotpink;
+text-align: center;
+/* border-radius: 6px; */
+padding: 5px 0;
+position: absolute;
+/* bottom: 160%; */
+left: 50%;
+margin-left: -60px;
+opacity: 0;
+transition: opacity 2s;
+margin-top: 26px;
 }
 
 /* Tooltip arrow */
@@ -73,8 +106,24 @@ body {
     border-color: hotpink transparent transparent;
 }
 
+.speed-presets .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: dotted;
+    border-color: hotpink transparent transparent;
+}
+
 /* Show the tooltip text when you mouse over the tooltip container */
 .time-presets:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.speed-presets:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
 }

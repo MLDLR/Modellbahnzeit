@@ -74,7 +74,7 @@ timeComboBox.addEventListener('change', () => { // Wenn der Benutzer die ausgewÃ
   startClock(); // Rufe die startClock-Funktion auf
 });
 
-// To-Do -> Tag-Counter(2), MapÃŸstab als Combobox(1), Dark/Light Mode Switcher -> allg. Design verbessern (3)
+// To-Do -> Tag-Counter(1), Dark/Light Mode Switcher -> allg. Design verbessern (2)
 speedComboBox.addEventListener('change', () => {
   speed = getSpeedFactor(speedComboBox.value);
   startClock();
